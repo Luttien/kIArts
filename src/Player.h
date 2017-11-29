@@ -9,10 +9,10 @@ class Player : public Controller {
         Player();
         virtual ~Player();
 
-        Player* getInstance();
+        static Player* getInstance();
 
     private:
-        Player* instance;
+        static Player* instance;
         
 };
 
