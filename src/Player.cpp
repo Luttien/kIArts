@@ -1,6 +1,6 @@
 #include "Player.h"
 
-Player* instance = 0;
+Player* Player::instance = 0;
 
 Player::Player() : Controller() {
 

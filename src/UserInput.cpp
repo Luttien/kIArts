@@ -1,6 +1,6 @@
 #include "UserInput.h"
 
-UserInput* instance = 0;
+UserInput* UserInput::instance = 0;
 
 UserInput::UserInput() {
 
