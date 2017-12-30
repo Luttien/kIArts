@@ -10,7 +10,7 @@ BUILDPATH = obj
 # Path for the source files
 SOURCEPATH = src
 #Directories
-SOURCE_DIRS = . GraphicEngine
+SOURCE_DIRS = . GraphicEngine IOEngine
 #C++ compiler
 CXX = clang++
 
