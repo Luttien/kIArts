@@ -9,8 +9,12 @@ Camera::~Camera() {
     delete camera;
 }
 
-void Camera::setCameraPosition(irr::core::vector3df position){
+void Camera::setCameraPosition(irr::core::vector3df position) {
     camera -> setPosition (position);
+}
+
+void Camera::setCameraDirection(irr::core::vector3df direction) {
+    camera -> setTarget (direction);
 }
 
 void Camera::setShadowDistance(float zoom){

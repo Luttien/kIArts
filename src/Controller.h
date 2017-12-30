@@ -9,6 +9,9 @@ class Controller {
         Controller();
         virtual ~Controller();
 
+        //GETTERS
+        Car* getCar();
+
     private:
         Car *car;
 };

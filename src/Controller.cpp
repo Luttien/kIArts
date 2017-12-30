@@ -7,3 +7,7 @@ Controller::Controller() {
 Controller::~Controller() {
     delete car;
 }
+
+Car* Controller::getCar() {
+    return car;
+}

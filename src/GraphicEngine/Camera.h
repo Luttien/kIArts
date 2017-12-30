@@ -12,6 +12,7 @@ class Camera {
         ~Camera();
 
         void setCameraPosition(irr::core::vector3df);
+        void setCameraDirection(irr::core::vector3df);
 
         void setShadowDistance(float);
 

@@ -12,8 +12,7 @@ class Player : public Controller {
         static Player* getInstance();
 
     private:
-        static Player* instance;
-        
+        static Player* instance;     
 };
 
 #endif

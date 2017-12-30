@@ -4,7 +4,8 @@ CameraController::CameraController(){
 	//Camera 
     camera = new Camera();
     camera -> setShadowDistance(42000.f);
-	camera -> setCameraPosition(irr::core::vector3df(0, 0, 0));
+	camera -> setCameraPosition(irr::core::vector3df(500, 500, 500));
+	camera -> setCameraDirection(irr::core::vector3df(0, 0, 0));
 }
 
 CameraController::~CameraController() {
