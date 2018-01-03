@@ -28,8 +28,11 @@ class Window {
 
         int getScreenWidth();
         int getScreenHeight();
-        float getDeltaTime();   
+        float getDeltaTime();  
 
+        //SETTERS
+        void setEventReceiver(IEventReceiver*);
+        
     private:
         static Window* instance;
 

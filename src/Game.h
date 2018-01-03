@@ -3,6 +3,7 @@
 
 #include "GraphicEngine/Window.h"
 #include "GameState.h"
+#include "IOEngine/UserInput.h"
 
 class Game {
     
@@ -20,6 +21,7 @@ class Game {
 
         //GETTERS
         Window* getWindow();
+        UserInput* getIo();
 
     private:
         static Game* instance;
@@ -27,6 +29,7 @@ class Game {
         Window* window;
         GameState* game;
         State* state;
+        UserInput* io;
         
 };
 

@@ -95,3 +95,7 @@ int Window::getScreenHeight(){
 float Window::getDeltaTime(){
     return deltaTime;
 }
+
+void Window::setEventReceiver(IEventReceiver *receiver) {
+    device -> setEventReceiver(receiver);
+}

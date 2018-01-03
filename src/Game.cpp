@@ -7,10 +7,15 @@ Game::Game() {
 
     game = new GameState();
     state = game;
+
+    io = new UserInput();
+
+    window -> setEventReceiver(io);
 }
 
 Game::~Game() {
     delete game;
+    delete io;
 }
 
 Game* Game::getInstance() {
@@ -35,7 +40,9 @@ void Game::render() {
 }
 
 void Game::input() {
+    io -> endEventProcess();
     state -> input();
+    io -> startEventProcess();
 }
 
 void Game::cleanUp() {
@@ -45,4 +52,8 @@ void Game::cleanUp() {
 
 Window* Game::getWindow() {
     return window;
+}
+
+UserInput* Game::getIo() {
+    return io;
 }

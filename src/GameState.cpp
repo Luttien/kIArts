@@ -1,5 +1,6 @@
 #include "GameState.h"
 #include "Player.h"
+#include "Game.h"
 
 GameState::GameState() : State() {
     camera = new CameraController();
@@ -15,7 +16,9 @@ void GameState::init() {
 
 void GameState::update() {
     camera -> update();
-    //Player::getInstance() -> getCar() -> move();
+    if (Game::getInstance() -> getIo() -> keyDown(irr::KEY_KEY_W)) {
+        Player::getInstance() -> getCar() -> move();
+    }
 }
 
 void GameState::render() {
