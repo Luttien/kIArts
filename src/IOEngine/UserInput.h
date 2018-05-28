@@ -23,9 +23,7 @@ class UserInput : public IEventReceiver {
         void startEventProcess();
 
     private:
-		// Keyboard key states.
 		Enumeration::keyStatesENUM keyState[KEY_KEY_CODES_COUNT];
-        //Current state: STARTED = handling events, ENDED = not handling events.
 	    Enumeration::processStateENUM processState;
 };
 

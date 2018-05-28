@@ -6,7 +6,7 @@ Camera::Camera() {
 }
 
 Camera::~Camera() {
-    delete camera;
+    camera -> remove();
 }
 
 void Camera::setCameraPosition(irr::core::vector3df position) {

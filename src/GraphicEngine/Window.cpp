@@ -33,7 +33,12 @@ Window::Window(i32 width, i32 height) {
 }
 
 Window::~Window() {
-    delete device;
+    device -> closeDevice();
+    device -> run();
+    device -> drop();
+    driver -> drop();
+    scene -> drop();
+    gui -> drop();
 }
 
 Window* Window::getInstance() {

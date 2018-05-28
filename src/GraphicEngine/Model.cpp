@@ -8,7 +8,7 @@ Model::Model(i32 size) {
 }
 
 Model::~Model() {
-
+    model -> remove();
 }
 
 void Model::setPosition(Vector3<f32> newPosition) {
