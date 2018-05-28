@@ -18,6 +18,9 @@ void GameState::update() {
     camera -> update();
     if (Game::getInstance() -> getIo() -> keyDown(irr::KEY_KEY_W)) {
         Player::getInstance() -> getCar() -> move();
+    } else {
+        if (Game::getInstance() -> getIo() -> keyDown(irr::KEY_KEY_S)) {
+            Player::getInstance() -> getCar() -> move();
     }
 }
 

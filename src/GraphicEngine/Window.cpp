@@ -45,9 +45,9 @@ Window* Window::getInstance() {
 
 void Window::beginScene(){
     float now = device -> getTimer() -> getTime();
-    deltaTime = (float)(now - dtThen) / 1000.f; // Time in seconds
+    deltaTime = (float)(now - dtThen) / 1000.f;
     dtThen = now;
-    driver -> beginScene(true, true, 0 );
+    driver -> beginScene(true, true, video::SColor(0, 0, 0, 0));
 }
 
 void Window::endScene(){

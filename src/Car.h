@@ -1,9 +1,7 @@
 #ifndef CAR_H
 #define CAR_H
 
-#include <irrlicht.h>
-
-using namespace irr;
+#include "GraphicEngine/Model.h"
 
 class Car {
     
@@ -15,7 +13,7 @@ class Car {
 
     private:
         int speed;
-        scene::IMeshSceneNode *model;
+        Model *model;
         
 };
 

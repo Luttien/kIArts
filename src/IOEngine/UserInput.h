@@ -1,7 +1,7 @@
 #ifndef USERINPUT_H
 #define USERINPUT_H
 
-#include <irrlicht.h>
+#include <irrlicht/irrlicht.h>
 #include "../Enumeration.h"
 
 using namespace irr;

@@ -1,8 +1,7 @@
 #include "Car.h"
-#include "GraphicEngine/Window.h"
 
 Car::Car() {
-    model = Window::getInstance() -> getSceneManager() -> addCubeSceneNode(100);
+    model = new Model();
     model -> setPosition(irr::core::vector3df(0, 0, 0));
     model -> setMaterialFlag(video::EMF_LIGHTING, false);
 }
