@@ -2,7 +2,7 @@
 
 Window* Window::instance = 0;
 
-Window::Window(int width, int height) {
+Window::Window(i32 width, i32 height) {
     screenWidth = width;
     screenHeight = height;
 
@@ -44,8 +44,8 @@ Window* Window::getInstance() {
 }
 
 void Window::beginScene(){
-    float now = device -> getTimer() -> getTime();
-    deltaTime = (float)(now - dtThen) / 1000.f;
+    f32 now = device -> getTimer() -> getTime();
+    deltaTime = (f32)(now - dtThen) / 1000.f;
     dtThen = now;
     driver -> beginScene(true, true, video::SColor(0, 0, 0, 0));
 }
@@ -84,15 +84,15 @@ gui::IGUIEnvironment* Window::getGUIEnvironment(){
     return gui;
 }
 
-int Window::getScreenWidth(){
+i32 Window::getScreenWidth(){
     return screenWidth;
 }
 
-int Window::getScreenHeight(){
+i32 Window::getScreenHeight(){
     return screenHeight;
 }
 
-float Window::getDeltaTime(){
+f32 Window::getDeltaTime(){
     return deltaTime;
 }
 

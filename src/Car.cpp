@@ -1,17 +1,15 @@
 #include "Car.h"
 
 Car::Car() {
-    model = new Model();
-    model -> setPosition(irr::core::vector3df(0, 0, 0));
-    model -> setMaterialFlag(video::EMF_LIGHTING, false);
+    model = new Model(100);
 }
 
 Car::~Car() {
-    
+    delete model;
 }
 
 void Car::move() {
-    float x = model -> getPosition().X;
+    f32 x = model -> getPosition().x;
     x = x + 10;
-    model -> setPosition(irr::core::vector3df(x, model -> getPosition().Y, model -> getPosition().Z));
+    model -> setPosition(irr::core::vector3df(x, model -> getPosition().y, model -> getPosition().z));
 }

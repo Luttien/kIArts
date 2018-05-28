@@ -1,6 +1,6 @@
 #include "Game.h"
 
-int main(){
+i32 main(){
     Game *game = Game::getInstance();
 
     game -> init();

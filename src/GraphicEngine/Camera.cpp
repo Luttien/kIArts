@@ -17,7 +17,7 @@ void Camera::setCameraDirection(irr::core::vector3df direction) {
     camera -> setTarget (direction);
 }
 
-void Camera::setShadowDistance(float zoom){
+void Camera::setShadowDistance(f32 zoom){
 	camera -> setFarValue(zoom);
 }
 

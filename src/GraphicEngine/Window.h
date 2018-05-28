@@ -2,13 +2,14 @@
 #define WINDOW_H
 
 #include <irrlicht/irrlicht.h>
+#include "../MathEngine/Types.h"
 
 using namespace irr;
 
 class Window {
     
     public:
-        Window(int, int);
+        Window(i32, i32);
         virtual ~Window();
 
         static Window* getInstance();
@@ -26,9 +27,9 @@ class Window {
         scene::ISceneManager* getSceneManager();
         gui::IGUIEnvironment* getGUIEnvironment();
 
-        int getScreenWidth();
-        int getScreenHeight();
-        float getDeltaTime();  
+        i32 getScreenWidth();
+        i32 getScreenHeight();
+        f32 getDeltaTime();  
 
         //SETTERS
         void setEventReceiver(IEventReceiver*);
@@ -36,16 +37,16 @@ class Window {
     private:
         static Window* instance;
 
-        int screenWidth;
-        int screenHeight;
+        i32 screenWidth;
+        i32 screenHeight;
 
         IrrlichtDevice* device;
         video::IVideoDriver* driver;
         scene::ISceneManager* scene;
         gui::IGUIEnvironment* gui;
 
-        float dtThen;
-        float deltaTime;
+        f32 dtThen;
+        f32 deltaTime;
 };
 
 #endif

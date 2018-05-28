@@ -2,6 +2,7 @@
 #define CAMERA_H
 
 #include <irrlicht/irrlicht.h>
+#include "../MathEngine/Types.h"
 
 using namespace irr;
 
@@ -14,11 +15,11 @@ class Camera {
         void setCameraPosition(irr::core::vector3df);
         void setCameraDirection(irr::core::vector3df);
 
-        void setShadowDistance(float);
+        void setShadowDistance(f32);
 
         irr::core::vector3df getCameraPosition();
 
-        float getReciprocalSquareroot() {
+        f32 getReciprocalSquareroot() {
             return core::reciprocal_squareroot((f32)2);
         }
 

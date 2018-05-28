@@ -12,7 +12,7 @@ class Car {
         void move();
 
     private:
-        int speed;
+        i32 speed;
         Model *model;
         
 };

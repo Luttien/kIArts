@@ -21,6 +21,7 @@ void GameState::update() {
     } else {
         if (Game::getInstance() -> getIo() -> keyDown(irr::KEY_KEY_S)) {
             Player::getInstance() -> getCar() -> move();
+        }
     }
 }
 

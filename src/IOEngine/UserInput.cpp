@@ -1,4 +1,5 @@
 #include "UserInput.h"
+#include "../MathEngine/Types.h"
 
 #include <iostream>
 
@@ -6,7 +7,7 @@ using namespace irr;
 
 UserInput::UserInput() {
     //KeyBoard States.
-    for (int i = 0; i < KEY_KEY_CODES_COUNT; i++) {
+    for (i32 i = 0; i < KEY_KEY_CODES_COUNT; i++) {
         keyState[i] = Enumeration::UP;
     }
 }
@@ -42,7 +43,7 @@ bool UserInput::OnEvent(const SEvent& event){
 }
 
 bool UserInput::keyPressed(char keycode) {
-    if (keyState[(int)keycode] == Enumeration::PRESSED) {
+    if (keyState[(i32)keycode] == Enumeration::PRESSED) {
         return true;
     } else {
         return false;
@@ -50,7 +51,7 @@ bool UserInput::keyPressed(char keycode) {
 }
 
 bool UserInput::keyDown(char keycode) {
-    if (keyState[(int)keycode] == Enumeration::DOWN || keyState[(int)keycode] == Enumeration::PRESSED) {
+    if (keyState[(i32)keycode] == Enumeration::DOWN || keyState[(i32)keycode] == Enumeration::PRESSED) {
         return true;
     } else {
         return false;
@@ -58,7 +59,7 @@ bool UserInput::keyDown(char keycode) {
 }
 
 bool UserInput::keyUp(char keycode) {
-    if (keyState[(int)keycode] == Enumeration::UP || keyState[(int)keycode] == Enumeration::RELEASED) {
+    if (keyState[(i32)keycode] == Enumeration::UP || keyState[(i32)keycode] == Enumeration::RELEASED) {
         return true;
     } else {
         return false;
@@ -66,7 +67,7 @@ bool UserInput::keyUp(char keycode) {
 }
 
 bool UserInput::keyReleased(char keycode) {
-    if (keyState[(int)keycode] == Enumeration::RELEASED) {
+    if (keyState[(i32)keycode] == Enumeration::RELEASED) {
         return true;
     } else {
         return false;
@@ -82,7 +83,7 @@ void UserInput::endEventProcess() {
 void UserInput::startEventProcess() {
     processState = Enumeration::STARTED;
     //Keyboard Key States
-    for (int i = 0; i < KEY_KEY_CODES_COUNT; i++) {
+    for (i32 i = 0; i < KEY_KEY_CODES_COUNT; i++) {
         if (keyState[i] == Enumeration::RELEASED) {
             keyState[i] = Enumeration::UP;
         }
