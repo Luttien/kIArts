@@ -17,10 +17,12 @@ void GameState::init() {
 void GameState::update() {
     camera -> update();
     if (Game::getInstance() -> getIo() -> keyDown(irr::KEY_KEY_W)) {
-        Player::getInstance() -> getCar() -> move();
+        Player::getInstance() -> getCar() -> speedUp();
     } else {
         if (Game::getInstance() -> getIo() -> keyDown(irr::KEY_KEY_S)) {
-            Player::getInstance() -> getCar() -> move();
+            Player::getInstance() -> getCar() -> reverse();
+        } else {
+            Player::getInstance() -> getCar() -> brake();
         }
     }
 }

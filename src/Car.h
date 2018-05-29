@@ -2,6 +2,7 @@
 #define CAR_H
 
 #include "GraphicEngine/Model.h"
+#include "Enumeration.h"
 
 class Car {
     
@@ -9,12 +10,15 @@ class Car {
         Car();
         virtual ~Car();
 
-        void move();
+        void speedUp();
+        void reverse();
+        void brake();
 
     private:
-        i32 speed;
-        Model *model;
+        void move();
         
+        f32 speed;
+        Model *model;
 };
 
 #endif
