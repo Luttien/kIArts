@@ -2,9 +2,6 @@
 #define CAMERACONTROLLER_H
 
 #include "GraphicEngine/Camera.h"
-#include <irrlicht/irrlicht.h>
-
-using namespace irr;
 
 class CameraController {
     

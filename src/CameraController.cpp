@@ -1,11 +1,11 @@
 #include "CameraController.h"
   
-CameraController::CameraController(){
+CameraController::CameraController() {
 	//Camera 
     camera = new Camera();
     camera -> setShadowDistance(42000.f);
-	camera -> setCameraPosition(irr::core::vector3df(500, 500, 500));
-	camera -> setCameraDirection(irr::core::vector3df(0, 0, 0));
+	camera -> setCameraPosition(Vector3<f32>(500, 500, 500));
+	camera -> setCameraDirection(Vector3<f32>(0, 0, 0));
 }
 
 CameraController::~CameraController() {
