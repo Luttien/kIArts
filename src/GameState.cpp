@@ -4,10 +4,12 @@
 
 GameState::GameState() : State() {
     camera = new CameraController();
+    racetrack = new Racetrack();
 }
 
 GameState::~GameState() {
     delete camera;
+    delete racetrack;
 }
 
 void GameState::init() {

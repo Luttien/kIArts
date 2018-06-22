@@ -3,6 +3,7 @@
 
 #include "State.h"
 #include "CameraController.h"
+#include "Racetrack.h"
 
 class GameState : public State {
     
@@ -17,8 +18,8 @@ class GameState : public State {
         void cleanUp();
 
     private:
-        CameraController *camera;
-        
+        CameraController* camera;
+        Racetrack* racetrack;
 };
 
 #endif
