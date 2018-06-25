@@ -1,4 +1,5 @@
 #include "CameraController.h"
+#include "Player.h"
   
 CameraController::CameraController() {
 	//Camera 
@@ -13,7 +14,7 @@ CameraController::~CameraController() {
 }
 
 void CameraController::update() {
-
+	camera -> setCameraDirection(Player::getInstance() -> getCar() -> getModel() -> getPosition());
 }
 
 void CameraController::move() {

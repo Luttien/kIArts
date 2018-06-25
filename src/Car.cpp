@@ -86,3 +86,7 @@ void Car::straighten() {
     }
     move();
 }
+
+Model* Car::getModel() {
+    return model;
+}

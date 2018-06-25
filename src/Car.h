@@ -17,6 +17,8 @@ class Car {
         void brake();
         void straighten();
 
+        Model* getModel();
+
     private:
         void move();
         void turn();
