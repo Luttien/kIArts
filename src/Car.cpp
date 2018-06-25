@@ -2,7 +2,9 @@
 
 Car::Car() {
     model = new Model(100);
+    direction = model -> getDirectionalVector();
     speed = 0;
+    turned = 0;
 }
 
 Car::~Car() {
@@ -10,9 +12,17 @@ Car::~Car() {
 }
 
 void Car::move() {
-    f32 x = model -> getPosition().x;
-    x = x + speed;
-    model -> setPosition(Vector3<f32>(x, model -> getPosition().y, model -> getPosition().z));
+    Vector3<f32> pos = model -> getPosition();
+    Vector3<f32> newPos = pos + direction * speed;
+    model -> setPosition(newPos);
+    direction = model -> getDirectionalVector();
+}
+
+void Car::turn() {
+    f32 y = model -> getRotation().y;
+    y = y + turned;
+    model -> setRotation(Vector3<f32>(model -> getRotation().x, y, model -> getRotation().z));
+    direction = model -> getDirectionalVector();
 }
 
 void Car::speedUp() {
@@ -29,6 +39,20 @@ void Car::reverse() {
     move();
 }
 
+void Car::turnLeft() {
+    if (turned < 1) {
+        turned = turned + 0.05;
+    }
+    turn();
+}
+
+void Car::turnRigth() {
+    if (turned > -1) {
+        turned = turned - 0.05;
+    }
+    turn();
+}
+
 void Car::brake() {
     if (speed < 0) {
         speed = speed + 0.5;
@@ -40,6 +64,23 @@ void Car::brake() {
             speed = speed - 0.5;
             if (speed < 0) {
                 speed = 0;
+            }
+        }
+    }
+    move();
+}
+
+void Car::straighten() {
+    if (turned < 0) {
+        turned = turned + 0.05;
+        if (turned > 0) {
+            turned = 0;
+        }
+    } else {
+        if (turned > 0) {
+            turned = turned - 0.05;
+            if (turned < 0) {
+                turned = 0;
             }
         }
     }

@@ -12,13 +12,19 @@ class Car {
 
         void speedUp();
         void reverse();
+        void turnLeft();
+        void turnRigth();
         void brake();
+        void straighten();
 
     private:
         void move();
+        void turn();
         
         f32 speed;
+        f32 turned;
         Model *model;
+        Vector3<f32> direction;
 };
 
 #endif

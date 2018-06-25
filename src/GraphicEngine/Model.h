@@ -14,7 +14,10 @@ class Model {
         ~Model();
 
         void setPosition(Vector3<f32> newPosition);
+        void setRotation(Vector3<f32> newRotation);
         Vector3<f32> getPosition();
+        Vector3<f32> getRotation();
+        Vector3<f32> getDirectionalVector();
 
     private:
         scene::IMeshSceneNode* model;

@@ -18,10 +18,19 @@ void GameState::init() {
 
 void GameState::update() {
     camera -> update();
-    if (Game::getInstance() -> getIo() -> keyDown(irr::KEY_KEY_W)) {
+    if (Game::getInstance() -> getIo() -> keyDown(irr::KEY_LEFT)) {
+        Player::getInstance() -> getCar() -> turnLeft();
+    } else {
+        if (Game::getInstance() -> getIo() -> keyDown(irr::KEY_RIGHT)) {
+            Player::getInstance() -> getCar() -> turnRigth();
+        } else {
+            Player::getInstance() -> getCar() -> straighten();
+        }
+    }
+    if (Game::getInstance() -> getIo() -> keyDown(irr::KEY_UP)) {
         Player::getInstance() -> getCar() -> speedUp();
     } else {
-        if (Game::getInstance() -> getIo() -> keyDown(irr::KEY_KEY_S)) {
+        if (Game::getInstance() -> getIo() -> keyDown(irr::KEY_DOWN)) {
             Player::getInstance() -> getCar() -> reverse();
         } else {
             Player::getInstance() -> getCar() -> brake();
