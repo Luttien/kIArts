@@ -22,6 +22,11 @@ class Enumeration {
             ENDED
         };
 
+        enum behaviourState {
+            SUCCESS,
+            FAILURE
+        };
+
     private:
         
 };
