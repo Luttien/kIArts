@@ -1,7 +1,7 @@
 #ifndef CAR_H
 #define CAR_H
 
-#include "GraphicEngine/Model.h"
+#include "GraphicEngine/Cube.h"
 #include "Enumeration.h"
 
 class Car {
@@ -17,7 +17,7 @@ class Car {
         void brake();
         void straighten();
 
-        Model* getModel();
+        Cube* getModel();
 
     private:
         void move();
@@ -25,7 +25,7 @@ class Car {
         
         f32 speed;
         f32 turned;
-        Model *model;
+        Cube *model;
         Vector3<f32> direction;
 };
 

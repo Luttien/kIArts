@@ -1,7 +1,7 @@
 #include "Condition.h"
 
-Condition::Condition(Action* newAction) {
-    action = newAction;
+Condition::Condition() : Node() {
+
 }
 
 Condition::~Condition() {

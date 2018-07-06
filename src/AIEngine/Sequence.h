@@ -1,11 +1,15 @@
 #ifndef SEQUENCE_H
 #define SEQUENCE_H
 
-class Sequence {
+#include "Node.h"
+
+class Sequence : public Node {
     
     public:
         Sequence();
         ~Sequence();
+
+        virtual Enumeration::behaviourState update() = 0;
 
     private:
 };

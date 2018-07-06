@@ -1,5 +1,5 @@
-#ifndef MODEL_H
-#define MODEL_H
+#ifndef CUBE_H
+#define CUBE_H
 
 #include <irrlicht/irrlicht.h>
 #include "../MathEngine/Types.h"
@@ -7,11 +7,11 @@
 
 using namespace irr;
 
-class Model {
+class Cube {
     
     public:
-        Model();
-        ~Model();
+        Cube(i32 size);
+        ~Cube();
 
         void setPosition(Vector3<f32> newPosition);
         void setRotation(Vector3<f32> newRotation);

@@ -5,8 +5,7 @@ CameraController::CameraController() {
 	//Camera 
     camera = new Camera();
     camera -> setShadowDistance(42000.f);
-	camera -> setCameraPosition(Vector3<f32>(500, 500, 500));
-	camera -> setCameraDirection(Vector3<f32>(0, 0, 0));
+	move();
 }
 
 CameraController::~CameraController() {
@@ -14,19 +13,19 @@ CameraController::~CameraController() {
 }
 
 void CameraController::update() {
-	camera -> setCameraDirection(Player::getInstance() -> getCar() -> getModel() -> getPosition());
+	rotate();
+	move();
 }
 
 void CameraController::move() {
-
+	Vector3<f32> posPl = Player::getInstance() -> getCar() -> getModel() -> getPosition();
+	camera -> setDirection(posPl);
+	camera -> setPosition(Vector3<f32>(posPl.x, posPl.y + 200, posPl.z - 200));
 }
 
-void CameraController::zoom() {
-	
-}
-
-void CameraController::rotateAndInclinate() {
-    
+void CameraController::rotate() {
+	Vector3<f32> rotPl = Player::getInstance() -> getCar() -> getModel() -> getRotation();
+	camera -> setRotation(rotPl);
 }
 
 Camera *CameraController::getCamera(){

@@ -2,14 +2,17 @@
 #define CONDITION_H
 
 #include "Action.h"
+#include "Node.h"
 
-class Condition {
+class Condition : public Node {
     
     public:
-        Condition(Action*);
+        Condition();
         ~Condition();
 
-    private:
+        virtual Enumeration::behaviourState update() = 0;
+
+    protected:
         Action* action;
 };
 #endif

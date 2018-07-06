@@ -3,20 +3,26 @@
 
 Camera::Camera() {
     camera = Window::getInstance() -> getSceneManager() -> addCameraSceneNode(0);
+    camera -> bindTargetAndRotation(true);
 }
 
 Camera::~Camera() {
     camera -> remove();
 }
 
-void Camera::setCameraPosition(Vector3<f32> newPosition) {
+void Camera::setPosition(Vector3<f32> newPosition) {
     irr::core::vector3df position = irr::core::vector3df(newPosition.x, newPosition.y, newPosition.z);
-    camera -> setPosition (position);
+    camera -> setPosition(position);
 }
 
-void Camera::setCameraDirection(Vector3<f32> newDirection) {
+void Camera::setDirection(Vector3<f32> newDirection) {
     irr::core::vector3df direction = irr::core::vector3df(newDirection.x, newDirection.y, newDirection.z);
-    camera -> setTarget (direction);
+    camera -> setTarget(direction);
+}
+
+void Camera::setRotation(Vector3<f32> newRotation) {
+    irr::core::vector3df rotation = irr::core::vector3df(newRotation.x, newRotation.y, newRotation.z);
+    camera -> setRotation(rotation);
 }
 
 void Camera::setShadowDistance(f32 zoom){

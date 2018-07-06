@@ -1,7 +1,7 @@
 #include "Car.h"
 
 Car::Car() {
-    model = new Model(100);
+    model = new Cube(100);
     direction = model -> getDirectionalVector();
     speed = 0;
     turned = 0;
@@ -40,15 +40,15 @@ void Car::reverse() {
 }
 
 void Car::turnLeft() {
-    if (turned < 1) {
-        turned = turned + 0.05;
+    if (turned > -1) {
+        turned = turned - 0.05;
     }
     turn();
 }
 
 void Car::turnRigth() {
-    if (turned > -1) {
-        turned = turned - 0.05;
+    if (turned < 1) {
+        turned = turned + 0.05;
     }
     turn();
 }
@@ -87,6 +87,6 @@ void Car::straighten() {
     move();
 }
 
-Model* Car::getModel() {
+Cube* Car::getModel() {
     return model;
 }

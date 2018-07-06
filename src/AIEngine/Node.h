@@ -9,7 +9,7 @@ class Node {
         Node();
         ~Node();
 
-        Enumeration::behaviourState update();
+        virtual Enumeration::behaviourState update() = 0;
 
     protected:
         Enumeration::behaviourState state;

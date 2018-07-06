@@ -13,8 +13,9 @@ class Camera {
         Camera();
         ~Camera();
 
-        void setCameraPosition(Vector3<f32> newPosition);
-        void setCameraDirection(Vector3<f32> newDirection);
+        void setPosition(Vector3<f32> newPosition);
+        void setDirection(Vector3<f32> newDirection);
+        void setRotation(Vector3<f32> newRotation);
 
         void setShadowDistance(f32 zoom);
 

@@ -10,14 +10,13 @@ class CameraController {
         ~CameraController();
 
         void update();
-
         void move();
-        void rotateAndInclinate();
-        void zoom();
+        void rotate();
 
         Camera *getCamera();
 
     private:
+
         Camera *camera;
 };
 #endif

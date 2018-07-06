@@ -1,7 +1,7 @@
 #ifndef POWERUP_H
 #define POWERUP_H
 
-#include "GraphicEngine/Model.h"
+#include "GraphicEngine/Cube.h"
 
 class PowerUp {
     
@@ -10,7 +10,7 @@ class PowerUp {
         virtual ~PowerUp();
 
     private:
-        Model* model;
+        Cube* model;
 };
 
 #endif
