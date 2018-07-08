@@ -18,6 +18,7 @@ class Car {
         void straighten();
 
         Cube* getModel();
+        Vector3<f32> getDirection();
 
     private:
         void move();

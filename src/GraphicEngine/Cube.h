@@ -5,8 +5,6 @@
 #include "../MathEngine/Types.h"
 #include "../MathEngine/Vector3.h"
 
-using namespace irr;
-
 class Cube {
     
     public:
@@ -18,9 +16,10 @@ class Cube {
         Vector3<f32> getPosition();
         Vector3<f32> getRotation();
         Vector3<f32> getDirectionalVector();
+        irr::scene::IMeshSceneNode* getModel();
 
     private:
-        scene::IMeshSceneNode* model;
+        irr::scene::IMeshSceneNode* model;
 };
 
 #endif

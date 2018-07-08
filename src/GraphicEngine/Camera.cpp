@@ -1,13 +1,16 @@
 #include "Camera.h"
 #include "Window.h"
 
-Camera::Camera() {
-    camera = Window::getInstance() -> getSceneManager() -> addCameraSceneNode(0);
-    camera -> bindTargetAndRotation(true);
+Camera::Camera(irr::scene::ISceneNode* newParent) {
+    camera = Window::getInstance() -> getSceneManager() -> addCameraSceneNode(newParent);
 }
 
 Camera::~Camera() {
     camera -> remove();
+}
+
+void Camera::update() {
+
 }
 
 void Camera::setPosition(Vector3<f32> newPosition) {
@@ -18,11 +21,6 @@ void Camera::setPosition(Vector3<f32> newPosition) {
 void Camera::setDirection(Vector3<f32> newDirection) {
     irr::core::vector3df direction = irr::core::vector3df(newDirection.x, newDirection.y, newDirection.z);
     camera -> setTarget(direction);
-}
-
-void Camera::setRotation(Vector3<f32> newRotation) {
-    irr::core::vector3df rotation = irr::core::vector3df(newRotation.x, newRotation.y, newRotation.z);
-    camera -> setRotation(rotation);
 }
 
 void Camera::setShadowDistance(f32 zoom){

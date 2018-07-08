@@ -10,8 +10,6 @@ class CameraController {
         ~CameraController();
 
         void update();
-        void move();
-        void rotate();
 
         Camera *getCamera();
 

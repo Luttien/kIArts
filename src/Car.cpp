@@ -59,15 +59,16 @@ void Car::brake() {
         if (speed > 0) {
             speed = 0;
         }
+        move();
     } else {
         if (speed > 0) {
             speed = speed - 0.5;
             if (speed < 0) {
                 speed = 0;
             }
+            move();
         }
     }
-    move();
 }
 
 void Car::straighten() {
@@ -76,17 +77,22 @@ void Car::straighten() {
         if (turned > 0) {
             turned = 0;
         }
+        move();
     } else {
         if (turned > 0) {
             turned = turned - 0.05;
             if (turned < 0) {
                 turned = 0;
             }
+            move();
         }
     }
-    move();
 }
 
 Cube* Car::getModel() {
     return model;
+}
+
+Vector3<f32> Car::getDirection() {
+    return direction;
 }

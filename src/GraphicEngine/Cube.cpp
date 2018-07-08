@@ -33,8 +33,12 @@ Vector3<f32> Cube::getRotation() {
 
 Vector3<f32> Cube::getDirectionalVector() {
     irr::core::matrix4 mat = model -> getRelativeTransformation();
-    irr::core::vector3df dir(mat[8],mat[9],mat[10]);
+    irr::core::vector3df dir(mat[8], mat[9], mat[10]);
     dir.normalize();
     Vector3<f32> direction = Vector3<f32>(dir.X, dir.Y, dir.Z);
     return direction;
+}
+
+irr::scene::IMeshSceneNode* Cube::getModel() {
+    return model;
 }
