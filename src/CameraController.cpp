@@ -6,7 +6,7 @@ CameraController::CameraController() {
     camera -> setShadowDistance(42000.f);
 	Vector3<f32> posPl = Player::getInstance() -> getCar() -> getModel() -> getPosition();
 	camera -> setDirection(posPl);
-	camera -> setPosition(Vector3<f32>(posPl.x, posPl.y + 75, posPl.z - 200));
+	camera -> setPosition(Vector3<f32>(posPl.x, posPl.y + 75, posPl.z - 300));
 }
 
 CameraController::~CameraController() {

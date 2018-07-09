@@ -3,17 +3,23 @@
 #include "Game.h"
 
 GameState::GameState() : State() {
-    camera = new CameraController();
-    racetrack = new Racetrack();
+
 }
 
 GameState::~GameState() {
     delete camera;
     delete racetrack;
+    for (i32 i = 0; i < ai.size(); i ++) {
+        delete ai[i];
+    }
+    ai.clear();
 }
 
 void GameState::init() {
+    camera = new CameraController();
+    racetrack = new Racetrack();
     Player::getInstance();
+    ai.push_back(new AI());
 }
 
 void GameState::update() {

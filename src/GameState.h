@@ -1,9 +1,12 @@
 #ifndef GAMESTATE_H
 #define GAMESTATE_H
 
+#include <vector>
+
 #include "State.h"
 #include "CameraController.h"
 #include "Racetrack.h"
+#include "AI.h"
 
 class GameState : public State {
     
@@ -20,6 +23,7 @@ class GameState : public State {
     private:
         CameraController* camera;
         Racetrack* racetrack;
+        std::vector<AI*> ai;
 };
 
 #endif
