@@ -23,8 +23,7 @@ class Vector3 {
         void set(Vector3<T> v);
 
         Vector3<T> normalize();
-        Vector3<T> rotateFromPoi32(f32 r, f32 phi, f32 theta);
-        Vector3<T> getDistanceTo(Vector3<T> other);
+        f32 getDistanceTo(Vector3<T> other);
         
         bool operator ==(const Vector3<T> &p) const;
         bool operator !=(const Vector3<T> &p) const;

@@ -2,6 +2,7 @@
 #define PLAYER_H
 
 #include "Controller.h"
+#include "PlayerCar.h"
 
 class Player : public Controller {
     
@@ -10,9 +11,11 @@ class Player : public Controller {
         virtual ~Player();
 
         static Player* getInstance();
+        PlayerCar* getCar();
 
     private:
-        static Player* instance;     
+        static Player* instance;
+        PlayerCar* car;
 };
 
 #endif

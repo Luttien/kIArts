@@ -20,6 +20,8 @@ class GameState : public State {
         void render();
         void cleanUp();
 
+        Racetrack* getRacetrack();
+
     private:
         CameraController* camera;
         Racetrack* racetrack;

@@ -1,28 +1,13 @@
 #include "Car.h"
 
-Car::Car() {
-    model = new Cube(100);
-    direction = model -> getDirectionalVector();
+Car::Car(Sector* newActualSector) {
     speed = 0;
     turned = 0;
+    actualSector = newActualSector;
 }
 
 Car::~Car() {
     delete model;
-}
-
-void Car::move() {
-    Vector3<f32> pos = model -> getPosition();
-    Vector3<f32> newPos = pos + direction * speed;
-    model -> setPosition(newPos);
-    direction = model -> getDirectionalVector();
-}
-
-void Car::turn() {
-    f32 y = model -> getRotation().y;
-    y = y + turned;
-    model -> setRotation(Vector3<f32>(model -> getRotation().x, y, model -> getRotation().z));
-    direction = model -> getDirectionalVector();
 }
 
 void Car::speedUp() {

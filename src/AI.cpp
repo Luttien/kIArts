@@ -1,9 +1,13 @@
 #include "AI.h"
 
-AI::AI() : Controller() {
-
+AI::AI(Sector* newActualSector) : Controller() {
+    car = new AICar(newActualSector);
 }
 
 AI::~AI() {
 
+}
+
+void AI::update() {
+    car -> update();
 }

@@ -7,6 +7,12 @@ Cube::Cube(i32 size) {
     model -> setMaterialFlag(video::EMF_LIGHTING, false);
 }
 
+Cube::Cube(i32 size, Vector3<f32> position) {
+    model = Window::getInstance() -> getSceneManager() -> addCubeSceneNode(size);
+    model -> setPosition(irr::core::vector3df(position.x, position.y, position.z));
+    model -> setMaterialFlag(video::EMF_LIGHTING, false);
+}
+
 Cube::~Cube() {
     model -> remove();
 }

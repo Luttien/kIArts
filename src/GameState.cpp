@@ -16,10 +16,10 @@ GameState::~GameState() {
 }
 
 void GameState::init() {
-    camera = new CameraController();
     racetrack = new Racetrack();
     Player::getInstance();
-    ai.push_back(new AI());
+    camera = new CameraController();
+    ai.push_back(new AI(racetrack -> getSectors()));
 }
 
 void GameState::update() {
@@ -42,6 +42,9 @@ void GameState::update() {
         }
     }
     camera -> update();
+    for (i32 i = 0; i < ai.size(); i ++) {
+        ai[i] -> update();
+    }
 }
 
 void GameState::render() {
@@ -54,4 +57,8 @@ void GameState::input() {
 
 void GameState::cleanUp() {
 
+}
+
+Racetrack* GameState::getRacetrack() {
+    return racetrack;
 }

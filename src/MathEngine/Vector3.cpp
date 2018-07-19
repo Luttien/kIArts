@@ -48,21 +48,9 @@ Vector3<T> Vector3<T>::normalize() {
 }
 
 template <class T>
-Vector3<T> Vector3<T>::getDistanceTo(Vector3<T> other) {
-    return Vector3<T>(x - other.x, y - other.y, z - other.z);
-}
-
-template <class T>
-Vector3<T> Vector3<T>::rotateFromPoi32(f32 r, f32 phi, f32 theta) {
-    Vector3<T> poi32;
-    phi = phi * (PI / 180);
-    theta = theta * (PI / 180);
-
-    poi32.x = x + (r *  sinf(phi) * cosf(theta));
-    poi32.y = y + (r * -sinf(theta));
-    poi32.z = z + (r *  cosf(phi) * cosf(theta));
-
-    return poi32;
+f32 Vector3<T>::getDistanceTo(Vector3<T> other) {
+    Vector3<T> ret = Vector3<T>(x - other.x, y - other.y, z - other.z);
+    return sqrt(ret.x * ret.x + ret.y * ret.y + ret.z * ret.z);
 }
 
 template <class T>

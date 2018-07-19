@@ -22,6 +22,7 @@ class Game {
         //GETTERS
         Window* getWindow();
         UserInput* getIo();
+        State* getState();
 
     private:
         static Game* instance;

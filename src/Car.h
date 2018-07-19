@@ -2,12 +2,12 @@
 #define CAR_H
 
 #include "GraphicEngine/Cube.h"
-#include "Enumeration.h"
+#include "Sector.h"
 
 class Car {
     
     public:
-        Car();
+        Car(Sector* newActualSector);
         virtual ~Car();
 
         void speedUp();
@@ -20,14 +20,16 @@ class Car {
         Cube* getModel();
         Vector3<f32> getDirection();
 
-    private:
-        void move();
-        void turn();
+    protected:
+        virtual void move() = 0;
+        virtual void turn() = 0;
         
         f32 speed;
         f32 turned;
         Cube *model;
         Vector3<f32> direction;
+
+        Sector* actualSector;
 };
 
 #endif

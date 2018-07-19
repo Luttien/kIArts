@@ -57,3 +57,7 @@ Window* Game::getWindow() {
 UserInput* Game::getIo() {
     return io;
 }
+
+State* Game::getState() {
+    return state;
+}

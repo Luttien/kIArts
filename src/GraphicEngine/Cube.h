@@ -9,6 +9,7 @@ class Cube {
     
     public:
         Cube(i32 size);
+        Cube(i32 size, Vector3<f32> position);
         ~Cube();
 
         void setPosition(Vector3<f32> newPosition);
