@@ -27,7 +27,7 @@ void GameState::update() {
         Player::getInstance() -> getCar() -> turnLeft();
     } else {
         if (Game::getInstance() -> getIo() -> keyDown(irr::KEY_RIGHT)) {
-            Player::getInstance() -> getCar() -> turnRigth();
+            Player::getInstance() -> getCar() -> turnRight();
         } else {
             Player::getInstance() -> getCar() -> straighten();
         }

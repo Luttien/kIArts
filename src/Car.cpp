@@ -31,7 +31,7 @@ void Car::turnLeft() {
     turn();
 }
 
-void Car::turnRigth() {
+void Car::turnRight() {
     if (turned < 1) {
         turned = turned + 0.05;
     }

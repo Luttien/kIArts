@@ -13,7 +13,7 @@ class Car {
         void speedUp();
         void reverse();
         void turnLeft();
-        void turnRigth();
+        void turnRight();
         void brake();
         void straighten();
 

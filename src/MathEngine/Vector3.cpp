@@ -42,7 +42,7 @@ Vector3<T> Vector3<T>::normalize() {
     if (length != 0) {
         vector.x = (T) x / length;
         vector.y = (T) y / length;
-        vector.z = (T) y / length;
+        vector.z = (T) z / length;
     }
     return vector;
 }

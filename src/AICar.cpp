@@ -8,7 +8,7 @@ AICar::AICar(Sector* newActualSector) : Car(newActualSector) {
 }
 
 AICar::~AICar() {
-
+    delete model;
 }
 
 void AICar::move() {
@@ -24,7 +24,7 @@ void AICar::turn() {
 }
 
 void AICar::update() {
-    if (model -> getPosition().getDistanceTo(objetive) <= 100) {
+    if (model -> getPosition().getDistanceTo(objetive) <= 500) {
         actualSector = actualSector -> getNextSector();
         objetive = actualSector -> getNextSector() -> getStartDrivingLine();
     }
@@ -32,11 +32,13 @@ void AICar::update() {
     direction = direction.normalize();
     if (direction.x > model -> getDirectionalVector().x) {
         if (direction.x - model -> getDirectionalVector().x >= 0.0001) {
-            turnRigth();
+            turnRight();
         }
     } else {
         if (model -> getDirectionalVector().x - direction.x >= 0.0001) {
             turnLeft();
+        } else {
+            straighten();
         }
     }
     speedUp();
