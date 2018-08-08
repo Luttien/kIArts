@@ -1,6 +1,6 @@
 #include "SqAtRacetrack.h"
 
-SqAtRacetrack::SqAtRacetrack(AICar* newCar) : Sequence(newCar) {
+SqAtRacetrack::SqAtRacetrack(AICar* newCar, std::vector<Node*> newChildren) : Sequence(newCar, newChildren) {
 
 }
 

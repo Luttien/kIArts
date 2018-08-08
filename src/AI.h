@@ -4,6 +4,7 @@
 #include "Controller.h"
 #include "Sector.h"
 #include "AICar.h"
+#include "AIEngine/Selector.h"
 
 class AI : public Controller {
     
@@ -17,6 +18,7 @@ class AI : public Controller {
 
     private:
         AICar* car;
+        Selector* behaviour;
 };
 
 #endif

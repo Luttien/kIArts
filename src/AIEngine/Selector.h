@@ -1,12 +1,12 @@
 #ifndef SELECTOR_H
 #define SELECTOR_H
 
-#include "Node.h"
+#include "Composite.h"
 
-class Selector : public Node {
+class Selector : public Composite {
     
     public:
-        Selector(AICar* newCar);
+        Selector(AICar* newCar, std::vector<Node*> newChildren);
         ~Selector();
 
         virtual Enumeration::behaviourState update() = 0;

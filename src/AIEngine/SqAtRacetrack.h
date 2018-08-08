@@ -6,7 +6,7 @@
 class SqAtRacetrack : public Sequence {
     
     public:
-        SqAtRacetrack(AICar* newCar);
+        SqAtRacetrack(AICar* newCar, std::vector<Node*> newChildren);
         ~SqAtRacetrack();
 
         Enumeration::behaviourState update();

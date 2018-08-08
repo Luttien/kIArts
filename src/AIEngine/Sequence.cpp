@@ -1,6 +1,6 @@
 #include "Sequence.h"
 
-Sequence::Sequence(AICar* newCar) : Node(newCar) {
+Sequence::Sequence(AICar* newCar, std::vector<Node*> newChildren) : Composite(newCar, newChildren) {
 
 }
 
