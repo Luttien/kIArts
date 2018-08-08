@@ -9,5 +9,5 @@ AI::~AI() {
 }
 
 void AI::update() {
-    car -> update();
+    
 }

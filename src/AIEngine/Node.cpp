@@ -1,7 +1,7 @@
 #include "Node.h"
 
-Node::Node() {
-    state = Enumeration::behaviourState::FAILURE;
+Node::Node(AICar* newCar) {
+    car = newCar;
 }
 
 Node::~Node() {

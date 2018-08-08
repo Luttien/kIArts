@@ -74,10 +74,22 @@ void Car::straighten() {
     }
 }
 
+void Car::setActualSector(Sector* newActualSector) {
+    actualSector = newActualSector;
+}
+
+void Car::setDirection(Vector3<f32> newDirection) {
+    direction = newDirection;
+}
+
 Cube* Car::getModel() {
     return model;
 }
 
 Vector3<f32> Car::getDirection() {
     return direction;
+}
+
+Sector* Car::getActualSector() {
+    return actualSector;
 }

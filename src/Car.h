@@ -17,8 +17,13 @@ class Car {
         void brake();
         void straighten();
 
+        void setActualSector(Sector* newActualSector);
+        void setDirection(Vector3<f32> newDirection);
+
         Cube* getModel();
         Vector3<f32> getDirection();
+        Sector* getActualSector();
+
 
     protected:
         virtual void move() = 0;

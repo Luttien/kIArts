@@ -6,7 +6,7 @@
 class SqAtRacetrack : public Sequence {
     
     public:
-        SqAtRacetrack();
+        SqAtRacetrack(AICar* newCar);
         ~SqAtRacetrack();
 
         Enumeration::behaviourState update();

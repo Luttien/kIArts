@@ -1,6 +1,6 @@
 #include "SqAtRacetrack.h"
 
-SqAtRacetrack::SqAtRacetrack() : Sequence() {
+SqAtRacetrack::SqAtRacetrack(AICar* newCar) : Sequence(newCar) {
 
 }
 

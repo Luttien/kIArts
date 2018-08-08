@@ -2,16 +2,17 @@
 #define NODE_H
 
 #include "../Enumeration.h"
+#include "../AICar.h"
 
 class Node {
     
     public:
-        Node();
+        Node(AICar* newCar);
         ~Node();
 
         virtual Enumeration::behaviourState update() = 0;
 
     protected:
-        Enumeration::behaviourState state;
+        AICar* car;
 };
 #endif

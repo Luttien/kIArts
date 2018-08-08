@@ -6,7 +6,7 @@
 class Selector : public Node {
     
     public:
-        Selector();
+        Selector(AICar* newCar);
         ~Selector();
 
         virtual Enumeration::behaviourState update() = 0;

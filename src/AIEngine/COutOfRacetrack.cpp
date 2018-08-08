@@ -1,7 +1,7 @@
 #include "COutOfRacetrack.h"
 #include "AOutOfRacetrack.h"
 
-COutOfRacetrack::COutOfRacetrack() : Condition() {
+COutOfRacetrack::COutOfRacetrack(AICar* newCar) : Condition(newCar) {
     action = new AOutOfRacetrack();
 }
 

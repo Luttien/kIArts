@@ -7,7 +7,7 @@
 class Condition : public Node {
     
     public:
-        Condition();
+        Condition(AICar* newCar);
         ~Condition();
 
         virtual Enumeration::behaviourState update() = 0;

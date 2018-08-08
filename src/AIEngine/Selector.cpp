@@ -1,6 +1,6 @@
 #include "Selector.h"
 
-Selector::Selector() : Node() {
+Selector::Selector(AICar* newCar) : Node(newCar) {
 
 }
 

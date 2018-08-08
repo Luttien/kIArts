@@ -1,6 +1,6 @@
 #include "Sequence.h"
 
-Sequence::Sequence() : Node() {
+Sequence::Sequence(AICar* newCar) : Node(newCar) {
 
 }
 

@@ -6,7 +6,7 @@
 class Sequence : public Node {
     
     public:
-        Sequence();
+        Sequence(AICar* newCar);
         ~Sequence();
 
         virtual Enumeration::behaviourState update() = 0;

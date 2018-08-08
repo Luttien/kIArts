@@ -6,7 +6,7 @@
 class COutOfRacetrack : public Condition {
     
     public:
-        COutOfRacetrack();
+        COutOfRacetrack(AICar* newCar);
         ~COutOfRacetrack();
 
         Enumeration::behaviourState update();

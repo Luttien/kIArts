@@ -24,15 +24,11 @@ void AICar::turn() {
 }
 
 void AICar::update() {
-    if (model -> getPosition().getDistanceTo(objetive) <= 500) {
-        actualSector = actualSector -> getNextSector();
-        objetive = actualSector -> getNextSector() -> getStartDrivingLine();
-    }
-    direction = objetive - model -> getPosition();
-    direction = direction.normalize();
     if (direction.x > model -> getDirectionalVector().x) {
         if (direction.x - model -> getDirectionalVector().x >= 0.0001) {
             turnRight();
+        } else {
+            straighten();
         }
     } else {
         if (model -> getDirectionalVector().x - direction.x >= 0.0001) {
@@ -42,4 +38,12 @@ void AICar::update() {
         }
     }
     speedUp();
+}
+
+void AICar::setObjetive(Vector3<f32> newObjetive) {
+    objetive = newObjetive;
+}
+
+Vector3<f32> AICar::getObjetive() {
+    return objetive;
 }

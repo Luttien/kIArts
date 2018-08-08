@@ -11,6 +11,10 @@ class AICar : public Car {
 
         void update();
 
+        void setObjetive(Vector3<f32> newObjetive);
+
+        Vector3<f32> getObjetive();
+
     private:
         void move();
         void turn();
