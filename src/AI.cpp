@@ -13,7 +13,7 @@ AI::~AI() {
 }
 
 void AI::update() {
-    //behaviour -> update();
+    behaviour -> update();
 }
 
 void AI::createBehaviour() {
