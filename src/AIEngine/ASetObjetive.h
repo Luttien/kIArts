@@ -2,7 +2,6 @@
 #define ASETOBJETIVE_H
 
 #include "Action.h"
-#include "../AICar.h"
 
 class ASetObjetive : public Action {
     

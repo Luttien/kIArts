@@ -9,7 +9,7 @@ class AOutOfRacetrack : public Action {
         AOutOfRacetrack();
         ~AOutOfRacetrack();
 
-        Enumeration::behaviourState update();
+        Enumeration::behaviourState update(AICar* car);
 
     private:
 };

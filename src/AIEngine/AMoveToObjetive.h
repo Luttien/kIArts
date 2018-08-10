@@ -2,7 +2,6 @@
 #define AMOVETOOBJETIVE_H
 
 #include "Action.h"
-#include "../AICar.h"
 
 class AMoveToObjetive : public Action {
     

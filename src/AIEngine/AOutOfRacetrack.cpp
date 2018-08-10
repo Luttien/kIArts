@@ -8,6 +8,6 @@ AOutOfRacetrack::~AOutOfRacetrack() {
 
 }
 
-Enumeration::behaviourState AOutOfRacetrack::update() {
-    return Enumeration::behaviourState::SUCCESS;
+Enumeration::behaviourState AOutOfRacetrack::update(AICar* car) {
+    return Enumeration::behaviourState::FAILURE;
 }

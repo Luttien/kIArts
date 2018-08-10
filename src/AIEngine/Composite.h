@@ -13,7 +13,7 @@ class Composite : public Node {
 
         virtual Enumeration::behaviourState update() = 0;
 
-    private:
+    protected:
         std::vector<Node*> children;
 };
 #endif

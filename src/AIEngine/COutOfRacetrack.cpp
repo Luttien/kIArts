@@ -10,5 +10,5 @@ COutOfRacetrack::~COutOfRacetrack() {
 }
 
 Enumeration::behaviourState COutOfRacetrack::update() {
-    return action -> update();
+    return action -> update(car);
 }

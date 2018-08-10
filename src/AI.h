@@ -17,6 +17,8 @@ class AI : public Controller {
         AICar* getCar();
 
     private:
+        void createBehaviour();
+
         AICar* car;
         Selector* behaviour;
 };

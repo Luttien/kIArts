@@ -9,7 +9,7 @@ class Selector : public Composite {
         Selector(AICar* newCar, std::vector<Node*> newChildren);
         ~Selector();
 
-        virtual Enumeration::behaviourState update() = 0;
+        Enumeration::behaviourState update();
 
     private:
 };

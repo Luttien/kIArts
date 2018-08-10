@@ -15,8 +15,9 @@ Enumeration::behaviourState ConditionRepeat::update() {
     i32 loop = 0;
     while (loop < repeat) {
         for (i32 i = 0; i < actions.size(); i++) {
-            actions[i] -> update();
+            actions[i] -> update(car);
         }
         loop++;
     }
+    return Enumeration::behaviourState::SUCCESS;
 }

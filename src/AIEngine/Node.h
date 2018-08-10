@@ -14,5 +14,6 @@ class Node {
 
     protected:
         AICar* car;
+        Enumeration::behaviourState state;
 };
 #endif
