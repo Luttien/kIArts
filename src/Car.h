@@ -3,6 +3,7 @@
 
 #include "GraphicEngine/Cube.h"
 #include "Sector.h"
+#include "PowerUp.h"
 
 class Car {
     
@@ -19,10 +20,12 @@ class Car {
 
         void setActualSector(Sector* newActualSector);
         void setDirection(Vector3<f32> newDirection);
+        void setSpeed(i32 newSpeed);
 
         Cube* getModel();
         Vector3<f32> getDirection();
         Sector* getActualSector();
+        i32 getSpeed();
 
 
     protected:
@@ -33,8 +36,8 @@ class Car {
         f32 turned;
         Cube *model;
         Vector3<f32> direction;
-
         Sector* actualSector;
+        PowerUp* powerUp;
 };
 
 #endif

@@ -14,6 +14,7 @@ class Cube {
 
         void setPosition(Vector3<f32> newPosition);
         void setRotation(Vector3<f32> newRotation);
+        void setVisible(bool newVisible);
         Vector3<f32> getPosition();
         Vector3<f32> getRotation();
         Vector3<f32> getDirectionalVector();

@@ -4,17 +4,25 @@ Car::Car(Sector* newActualSector) {
     speed = 0;
     turned = 0;
     actualSector = newActualSector;
+    powerUp = NULL;
 }
 
 Car::~Car() {
     delete model;
+    if (powerUp != NULL) {
+        delete powerUp;
+    }
 }
 
 void Car::speedUp() {
-    if (speed < 10) {
-        speed = speed + 0.5;
+    if (powerUp != NULL && powerUp -> getActive() != false) {
+
+    } else {
+        if (speed < 10) {
+            speed = speed + 0.5;
+        }
+        move();
     }
-    move();
 }
 
 void Car::reverse() {
@@ -82,6 +90,10 @@ void Car::setDirection(Vector3<f32> newDirection) {
     direction = newDirection;
 }
 
+void Car::setSpeed(i32 newSpeed) {
+    speed = newSpeed;
+}
+
 Cube* Car::getModel() {
     return model;
 }
@@ -92,4 +104,8 @@ Vector3<f32> Car::getDirection() {
 
 Sector* Car::getActualSector() {
     return actualSector;
+}
+
+i32 Car::getSpeed() {
+    return speed;
 }

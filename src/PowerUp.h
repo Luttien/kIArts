@@ -6,11 +6,16 @@
 class PowerUp {
     
     public:
-        PowerUp();
+        PowerUp(bool newVisible);
         virtual ~PowerUp();
 
-    private:
+        virtual bool action() = 0;
+
+        bool getActive();
+
+    protected:
         Cube* model;
+        bool active;
 };
 
 #endif

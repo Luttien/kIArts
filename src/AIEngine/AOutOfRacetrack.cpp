@@ -9,5 +9,9 @@ AOutOfRacetrack::~AOutOfRacetrack() {
 }
 
 Enumeration::behaviourState AOutOfRacetrack::update(AICar* car) {
-    return Enumeration::behaviourState::FAILURE;
+    car -> setObjetive(car -> getActualSector() -> getNextSector() -> getStartDrivingLine());
+    Vector3<f32> direction = car -> getObjetive() - car -> getModel() -> getPosition();
+    car -> setDirection(direction.normalize());
+    car -> update();
+    return Enumeration::behaviourState::SUCCESS;
 }

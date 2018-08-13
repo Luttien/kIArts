@@ -25,6 +25,10 @@ void Cube::setRotation(Vector3<f32> newRotation) {
     model -> setRotation(irr::core::vector3df(newRotation.x, newRotation.y, newRotation.z));
 }
 
+void Cube::setVisible(bool newVisible) {
+    model -> setVisible(newVisible);
+}
+
 Vector3<f32> Cube::getPosition() {
     irr::core::vector3df pos = model -> getPosition();
     Vector3<f32> position = Vector3<f32>(pos.X, pos.Y, pos.Z);

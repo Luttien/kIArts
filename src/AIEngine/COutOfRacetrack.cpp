@@ -10,5 +10,9 @@ COutOfRacetrack::~COutOfRacetrack() {
 }
 
 Enumeration::behaviourState COutOfRacetrack::update() {
-    return action -> update(car);
+    if (true == false) {
+        return action -> update(car);
+    } else {
+        return Enumeration::behaviourState::FAILURE;
+    }
 }
