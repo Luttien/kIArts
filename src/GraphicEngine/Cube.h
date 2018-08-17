@@ -12,9 +12,13 @@ class Cube {
         Cube(i32 size, Vector3<f32> position);
         ~Cube();
 
+        bool intersectsWith(Cube* checkCube);
+
         void setPosition(Vector3<f32> newPosition);
         void setRotation(Vector3<f32> newRotation);
         void setVisible(bool newVisible);
+
+        bool getVisible();
         Vector3<f32> getPosition();
         Vector3<f32> getRotation();
         Vector3<f32> getDirectionalVector();
@@ -22,6 +26,7 @@ class Cube {
 
     private:
         irr::scene::IMeshSceneNode* model;
+        bool visible;
 };
 
 #endif

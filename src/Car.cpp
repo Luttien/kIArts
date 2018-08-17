@@ -1,4 +1,5 @@
 #include "Car.h"
+#include "PUSpeedUp.h"
 
 Car::Car(Sector* newActualSector) {
     speed = 0;
@@ -82,6 +83,15 @@ void Car::straighten() {
     }
 }
 
+void Car::takePowerUp(PowerUp* pUp) {
+    if (powerUp == NULL) {
+        if (model -> intersectsWith(pUp -> getModel())) {
+            pUp -> setVisible(false);
+            powerUp = new PUSpeedUp(this);
+        }
+    }
+}
+
 void Car::setActualSector(Sector* newActualSector) {
     actualSector = newActualSector;
 }
@@ -108,4 +118,8 @@ Sector* Car::getActualSector() {
 
 i32 Car::getSpeed() {
     return speed;
+}
+
+PowerUp* Car::getPowerUp() {
+    return powerUp;
 }

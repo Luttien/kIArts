@@ -5,16 +5,22 @@ Cube::Cube(i32 size) {
     model = Window::getInstance() -> getSceneManager() -> addCubeSceneNode(size);
     model -> setPosition(irr::core::vector3df(0, 0, 0));
     model -> setMaterialFlag(video::EMF_LIGHTING, false);
+    visible = true;
 }
 
 Cube::Cube(i32 size, Vector3<f32> position) {
     model = Window::getInstance() -> getSceneManager() -> addCubeSceneNode(size);
     model -> setPosition(irr::core::vector3df(position.x, position.y, position.z));
     model -> setMaterialFlag(video::EMF_LIGHTING, false);
+    visible = true;
 }
 
 Cube::~Cube() {
     model -> remove();
+}
+
+bool Cube::intersectsWith(Cube* checkCube) {
+    return model -> getTransformedBoundingBox().intersectsWithBox(checkCube -> getModel() -> getTransformedBoundingBox());
 }
 
 void Cube::setPosition(Vector3<f32> newPosition) {
@@ -27,6 +33,11 @@ void Cube::setRotation(Vector3<f32> newRotation) {
 
 void Cube::setVisible(bool newVisible) {
     model -> setVisible(newVisible);
+    visible = newVisible;
+}
+
+bool Cube::getVisible() {
+    return visible;
 }
 
 Vector3<f32> Cube::getPosition() {

@@ -13,6 +13,10 @@ GameState::~GameState() {
         delete ai[i];
     }
     ai.clear();
+    for (i32 i = 0; i < powerUps.size(); i ++) {
+        delete powerUps[i];
+    }
+    powerUps.clear();
 }
 
 void GameState::init() {
@@ -20,9 +24,24 @@ void GameState::init() {
     Player::getInstance();
     camera = new CameraController();
     ai.push_back(new AI(racetrack -> getSectors()));
+    powerUps.push_back(new PowerUp(true));
 }
 
 void GameState::update() {
+    i32 i = 0;
+    while (Player::getInstance() -> getCar() -> getPowerUp() == NULL && i < powerUps.size()) {
+        if (powerUps[i] -> getModel() -> getVisible() == true) {
+            Player::getInstance() -> getCar() -> takePowerUp(powerUps[i]);
+        }
+        i++;
+    }
+
+    if (Player::getInstance() -> getCar() -> getPowerUp() != NULL && Player::getInstance() -> getCar() -> getPowerUp() -> getActive() == false) {
+        if (Game::getInstance() -> getIo() -> keyDown(irr::KEY_SPACE)) {
+            Player::getInstance() -> getCar() -> getPowerUp() -> action();
+        }
+    }
+
     if (Game::getInstance() -> getIo() -> keyDown(irr::KEY_LEFT)) {
         Player::getInstance() -> getCar() -> turnLeft();
     } else {
@@ -32,6 +51,7 @@ void GameState::update() {
             Player::getInstance() -> getCar() -> straighten();
         }
     }
+
     if (Game::getInstance() -> getIo() -> keyDown(irr::KEY_UP)) {
         Player::getInstance() -> getCar() -> speedUp();
     } else {
@@ -41,7 +61,9 @@ void GameState::update() {
             Player::getInstance() -> getCar() -> brake();
         }
     }
+
     camera -> update();
+    
     for (i32 i = 0; i < ai.size(); i ++) {
         ai[i] -> update();
     }

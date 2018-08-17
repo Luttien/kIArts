@@ -17,6 +17,7 @@ class Car {
         void turnRight();
         void brake();
         void straighten();
+        void takePowerUp(PowerUp* pUp);
 
         void setActualSector(Sector* newActualSector);
         void setDirection(Vector3<f32> newDirection);
@@ -26,6 +27,7 @@ class Car {
         Vector3<f32> getDirection();
         Sector* getActualSector();
         i32 getSpeed();
+        PowerUp* getPowerUp();
 
 
     protected:

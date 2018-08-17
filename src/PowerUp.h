@@ -9,9 +9,13 @@ class PowerUp {
         PowerUp(bool newVisible);
         virtual ~PowerUp();
 
-        virtual bool action() = 0;
+        bool action();
+
+        void setVisible(bool newVisible);
 
         bool getActive();
+        bool getVisible();
+        Cube* getModel();
 
     protected:
         Cube* model;

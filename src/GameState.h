@@ -7,6 +7,7 @@
 #include "CameraController.h"
 #include "Racetrack.h"
 #include "AI.h"
+#include "PowerUp.h"
 
 class GameState : public State {
     
@@ -26,6 +27,7 @@ class GameState : public State {
         CameraController* camera;
         Racetrack* racetrack;
         std::vector<AI*> ai;
+        std::vector<PowerUp*> powerUps;
 };
 
 #endif
