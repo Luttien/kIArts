@@ -26,7 +26,6 @@ class Cube {
 
     private:
         irr::scene::IMeshSceneNode* model;
-        bool visible;
 };
 
 #endif

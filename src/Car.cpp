@@ -1,11 +1,13 @@
 #include "Car.h"
 #include "PUSpeedUp.h"
+#include "Game.h"
 
 Car::Car(Sector* newActualSector) {
     speed = 0;
     turned = 0;
     actualSector = newActualSector;
     powerUp = NULL;
+    inRacetrack = true;
 }
 
 Car::~Car() {
@@ -19,10 +21,26 @@ void Car::speedUp() {
     if (powerUp != NULL && powerUp -> getActive() != false) {
 
     } else {
-        if (speed < 10) {
-            speed = speed + 0.5;
+        checkOutRacetrack();
+        if (inRacetrack == true) {
+            if (speed < 10) {
+                speed = speed + 0.5;
+            } else {
+                if (speed > 10) {
+                    speed = speed - 0.5;
+                }
+            }
+            move();
+        } else {
+            if (speed < 5) {
+                speed = speed + 0.5;
+            } else {
+                if (speed > 5) {
+                    speed = speed - 0.5;
+                }
+            }
+            move();
         }
-        move();
     }
 }
 
@@ -48,19 +66,23 @@ void Car::turnRight() {
 }
 
 void Car::brake() {
-    if (speed < 0) {
-        speed = speed + 0.5;
-        if (speed > 0) {
-            speed = 0;
-        }
-        move();
+    if (powerUp != NULL && powerUp -> getActive() != false) {
+        
     } else {
-        if (speed > 0) {
-            speed = speed - 0.5;
-            if (speed < 0) {
+        if (speed < 0) {
+            speed = speed + 0.5;
+            if (speed > 0) {
                 speed = 0;
             }
             move();
+        } else {
+            if (speed > 0) {
+                speed = speed - 0.5;
+                if (speed < 0) {
+                    speed = 0;
+                }
+                move();
+            }
         }
     }
 }
@@ -92,6 +114,22 @@ void Car::takePowerUp(PowerUp* pUp) {
     }
 }
 
+void Car::checkOutRacetrack() {
+    if (actualSector -> getDownLeft().x < actualSector -> getDownRight().x) {
+        if (model -> getPosition().x >= actualSector -> getDownLeft().x && model -> getPosition().x >= actualSector -> getDownRight().x && model -> getPosition().x <= actualSector -> getUpLeft().x && model -> getPosition().x <= actualSector -> getUpRight().x) {
+            inRacetrack = true;
+        } else {
+            inRacetrack = false;
+        }
+    } else {
+        if (model -> getPosition().x <= actualSector -> getDownLeft().x && model -> getPosition().x <= actualSector -> getDownRight().x && model -> getPosition().x >= actualSector -> getUpLeft().x && model -> getPosition().x >= actualSector -> getUpRight().x) {
+            inRacetrack = true;
+        } else {
+            inRacetrack = false;
+        }
+    }
+}
+
 void Car::setActualSector(Sector* newActualSector) {
     actualSector = newActualSector;
 }
@@ -102,6 +140,10 @@ void Car::setDirection(Vector3<f32> newDirection) {
 
 void Car::setSpeed(i32 newSpeed) {
     speed = newSpeed;
+}
+
+void Car::setPowerUp(PowerUp* newPowerUp) {
+    powerUp = newPowerUp;
 }
 
 Cube* Car::getModel() {

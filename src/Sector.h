@@ -16,6 +16,11 @@ class Sector {
         void setPreviousSector(Sector* newPreviousSector);
         void setNextSector(Sector* newNextSector);
 
+        Vector3<f32> getUpLeft();
+        Vector3<f32> getDownLeft();
+        Vector3<f32> getUpRight();
+        Vector3<f32> getDownRight();
+
     private:
         Sector* previousSector;
         Sector* nextSector;

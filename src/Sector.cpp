@@ -34,3 +34,19 @@ void Sector::setPreviousSector(Sector* newPreviousSector) {
 void Sector::setNextSector(Sector* newNextSector) {
     nextSector = newNextSector;
 }
+
+Vector3<f32> Sector::getUpLeft() {
+    return upLeft;
+}
+
+Vector3<f32> Sector::getDownLeft() {
+    return downLeft;
+}
+
+Vector3<f32> Sector::getUpRight() {
+    return upRight;
+}
+
+Vector3<f32> Sector::getDownRight() {
+    return downRight;
+}

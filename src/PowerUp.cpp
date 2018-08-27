@@ -9,7 +9,7 @@ PowerUp::PowerUp(bool newVisible) {
     active = false;
 }
 
-PowerUp:: ~PowerUp() {
+PowerUp::~PowerUp() {
     if (model != NULL) {
         delete model;
     }

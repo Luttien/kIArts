@@ -18,10 +18,14 @@ class Car {
         void brake();
         void straighten();
         void takePowerUp(PowerUp* pUp);
+        void checkOutRacetrack();
 
         void setActualSector(Sector* newActualSector);
         void setDirection(Vector3<f32> newDirection);
         void setSpeed(i32 newSpeed);
+        void setPowerUp(PowerUp* newPowerUp);
+
+        virtual void move() = 0;
 
         Cube* getModel();
         Vector3<f32> getDirection();
@@ -31,9 +35,9 @@ class Car {
 
 
     protected:
-        virtual void move() = 0;
         virtual void turn() = 0;
         
+        bool inRacetrack;
         f32 speed;
         f32 turned;
         Cube *model;

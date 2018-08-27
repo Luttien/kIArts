@@ -2,11 +2,11 @@
 #include "Window.h"
 
 Model::Model() {
-    model = Window::getInstance() -> getSceneManager() -> addMeshSceneNode(Window::getInstance() -> getSceneManager() -> getMesh("media/racetrack/circuito_1/circuito_1.obj"));
+    model = Window::getInstance() -> getSceneManager() -> addMeshSceneNode(Window::getInstance() -> getSceneManager() -> getMesh("media/racetrack/circuito2/circuito2.obj"));
     model -> setPosition(irr::core::vector3df(0, 0, 0));
     model -> setMaterialFlag(video::EMF_LIGHTING, false);
     model -> setVisible(true);
-    model -> setScale(irr::core::vector3df(120, 120, 120));
+    model -> setScale(irr::core::vector3df(300, 300, 300));
 }
 
 Model::~Model() {

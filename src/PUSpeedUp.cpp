@@ -16,9 +16,11 @@ bool PUSpeedUp::action() {
         return true;
     } else {
         car -> setSpeed(car -> getSpeed() + 1);
-        if (speed < car -> getSpeed() + 5) {
+        if (speed + 5 > car -> getSpeed()) {
+            car -> move();
             return true;
         } else {
+            car -> move();
             return false;
         }
     }

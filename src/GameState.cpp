@@ -36,9 +36,16 @@ void GameState::update() {
         i++;
     }
 
-    if (Player::getInstance() -> getCar() -> getPowerUp() != NULL && Player::getInstance() -> getCar() -> getPowerUp() -> getActive() == false) {
-        if (Game::getInstance() -> getIo() -> keyDown(irr::KEY_SPACE)) {
-            Player::getInstance() -> getCar() -> getPowerUp() -> action();
+    if (Player::getInstance() -> getCar() -> getPowerUp() != NULL) {
+        if(Player::getInstance() -> getCar() -> getPowerUp() -> getActive() == false) {
+            if (Game::getInstance() -> getIo() -> keyDown(irr::KEY_SPACE)) {
+                Player::getInstance() -> getCar() -> getPowerUp() -> action();
+            }
+        } else {
+            if (Player::getInstance() -> getCar() -> getPowerUp() -> action() == false) {
+                delete Player::getInstance() -> getCar() -> getPowerUp();
+                Player::getInstance() -> getCar() -> setPowerUp(NULL);
+            }
         }
     }
 

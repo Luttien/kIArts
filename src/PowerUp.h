@@ -9,7 +9,7 @@ class PowerUp {
         PowerUp(bool newVisible);
         virtual ~PowerUp();
 
-        bool action();
+        virtual bool action();
 
         void setVisible(bool newVisible);
 
