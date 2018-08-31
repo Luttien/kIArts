@@ -1,7 +1,7 @@
 #include "PlayerCar.h"
 
 PlayerCar::PlayerCar(Sector* newActualSector) : Car(newActualSector) {
-    model = new Cube(100);
+    model = new Cube(100, actualSector -> getStartDrivingLine());
     direction = model -> getDirectionalVector();
 }
 

@@ -22,3 +22,7 @@ void AI::createBehaviour() {
     children.push_back(new CRInRacetrack(1, car));
     behaviour = new Selector(car, children);
 } 
+
+AICar* AI::getCar() {
+    return car;
+}

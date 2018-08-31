@@ -27,7 +27,6 @@ class GameState : public State {
         CameraController* camera;
         Racetrack* racetrack;
         std::vector<AI*> ai;
-        std::vector<PowerUp*> powerUps;
 };
 
 #endif

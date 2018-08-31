@@ -13,10 +13,6 @@ GameState::~GameState() {
         delete ai[i];
     }
     ai.clear();
-    for (i32 i = 0; i < powerUps.size(); i ++) {
-        delete powerUps[i];
-    }
-    powerUps.clear();
 }
 
 void GameState::init() {
@@ -24,16 +20,35 @@ void GameState::init() {
     Player::getInstance();
     camera = new CameraController();
     ai.push_back(new AI(racetrack -> getSectors()));
-    powerUps.push_back(new PowerUp(true));
 }
 
 void GameState::update() {
-    i32 i = 0;
-    while (Player::getInstance() -> getCar() -> getPowerUp() == NULL && i < powerUps.size()) {
-        if (powerUps[i] -> getModel() -> getVisible() == true) {
-            Player::getInstance() -> getCar() -> takePowerUp(powerUps[i]);
+    for (Sector* sec = racetrack -> getSectors() -> getNextSector(); sec != racetrack -> getSectors(); sec = sec -> getNextSector()) {
+        i32 i = 0;
+        while (Player::getInstance() -> getCar() -> getPowerUp() == NULL && i < sec -> getPowerUps().size()) {
+            if (sec -> getPowerUps()[i] -> getModel() -> getVisible() == true) {
+                Player::getInstance() -> getCar() -> takePowerUp(sec -> getPowerUps()[i]);
+            }
+            i++;
         }
-        i++;
+    }
+
+    for (Sector* sec = racetrack -> getSectors() -> getNextSector(); sec != racetrack -> getSectors(); sec = sec -> getNextSector()) {
+        for (i32 j = 0; j < ai.size(); j++) {
+            i32 i = 0;
+            while (ai[j] -> getCar() -> getPowerUp() == NULL && i < sec -> getPowerUps().size()) {
+                if (sec -> getPowerUps()[i] -> getModel() -> getVisible() == true) {
+                    ai[j] -> getCar() -> takePowerUp(sec -> getPowerUps()[i]);
+                }
+                i++;
+            }
+        }
+    }
+
+    for (Sector* sec = racetrack -> getSectors() -> getNextSector(); sec != racetrack -> getSectors(); sec = sec -> getNextSector()) {
+        for (i32 i = 0; i < sec -> getPowerUps().size(); i++) {
+            sec -> getPowerUps()[i] -> update();
+        }
     }
 
     if (Player::getInstance() -> getCar() -> getPowerUp() != NULL) {

@@ -2,14 +2,18 @@
 #define POWERUP_H
 
 #include "GraphicEngine/Cube.h"
+#include "MathEngine/Timer.h"
 
 class PowerUp {
     
     public:
-        PowerUp(bool newVisible);
+        PowerUp();
+        PowerUp(Vector3<f32> newPosition);
         virtual ~PowerUp();
 
+        void update();
         virtual bool action();
+        void resetTimer();
 
         void setVisible(bool newVisible);
 
@@ -19,6 +23,7 @@ class PowerUp {
 
     protected:
         Cube* model;
+        Timer* timer;
         bool active;
 };
 

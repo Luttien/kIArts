@@ -21,7 +21,7 @@ void Car::speedUp() {
     if (powerUp != NULL && powerUp -> getActive() != false) {
 
     } else {
-        checkOutRacetrack();
+        //checkOutRacetrack();
         if (inRacetrack == true) {
             if (speed < 10) {
                 speed = speed + 0.5;
@@ -109,6 +109,7 @@ void Car::takePowerUp(PowerUp* pUp) {
     if (powerUp == NULL) {
         if (model -> intersectsWith(pUp -> getModel())) {
             pUp -> setVisible(false);
+            pUp -> resetTimer();
             powerUp = new PUSpeedUp(this);
         }
     }

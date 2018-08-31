@@ -4,8 +4,6 @@
 #include <irrlicht/irrlicht.h>
 #include "Types.h"
 
-#include <irrlicht/irrlicht.h>
-
 #define PI 3.14159265
 
 template <class T>

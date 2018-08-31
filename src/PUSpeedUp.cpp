@@ -1,6 +1,6 @@
 #include "PUSpeedUp.h"
 
-PUSpeedUp::PUSpeedUp(Car* newCar) : PowerUp(false) {
+PUSpeedUp::PUSpeedUp(Car* newCar) : PowerUp() {
     speed = 0;
     car = newCar;
 }

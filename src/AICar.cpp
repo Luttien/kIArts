@@ -37,6 +37,18 @@ void AICar::update() {
             straighten();
         }
     }
+    
+    if (powerUp != NULL) {
+        if(powerUp -> getActive() == false) {
+            powerUp -> action();
+        } else {
+            if (powerUp -> action() == false) {
+                delete powerUp;
+                powerUp = NULL;
+            }
+        }
+    }
+
     speedUp();
 }
 
